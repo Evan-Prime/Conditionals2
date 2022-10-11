@@ -8,12 +8,28 @@ namespace Conditionals2
 {
     internal class Program
     {
+        static int health;
+
         static void Main(string[] args)
         {
             Console.WriteLine("Conditionals: ");
             Console.WriteLine();
 
+            health = 100;
+            TakeDamage(150);
+            Console.WriteLine("Health: " + health);
+
             Console.ReadKey(true);
+        }
+
+        static void TakeDamage(int damage)
+        {
+            Console.WriteLine("You're going to take " + damage + " damage...");
+            health = health - damage;
+            if (health < 0)
+            {
+                health = 0;
+            }
         }
     }
 }
