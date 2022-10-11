@@ -16,8 +16,16 @@ namespace Conditionals2
             Console.WriteLine();
 
             health = 100;
-            TakeDamage(150);
-            Console.WriteLine("Health: " + health);
+            TakeDamage(20);
+            ShowHUD();
+            TakeDamage(20);
+
+            if (health == 0)
+            {
+                Console.Clear();
+                Console.WriteLine("You Died!!");
+            }
+
 
             Console.ReadKey(true);
         }
@@ -30,6 +38,11 @@ namespace Conditionals2
             {
                 health = 0;
             }
+        }
+
+        static void ShowHUD()
+        {
+            Console.WriteLine("Health: " + health);
         }
     }
 }
